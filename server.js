@@ -32,13 +32,32 @@ app.post('/send-email', (req, res) => {
     Message: ${message}`
   };
 
+  const requesterOptions = {
+    from: 'ghc.notify@gmail.com',
+    to: email, // Doctor's email where the appointment request will be sent
+    subject: 'New Appointment Request Sent',
+    text: ` Your Appointment Request Submitted as per below details:
+    Name: ${name}
+    Email: ${email}
+    Phone: ${phone}
+    Message: ${message}`
+  };
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      return res.status(500).json({ message: 'Error sending email', error });
+      return res.status(500).json({ message: 'Error in appointment request', error });
     }
-    res.status(200).json({ message: 'Email sent successfully' });
+    res.status(200).json({ message: 'Appointment requested successfully' });
   });
 });
+
+transporter.sendMail(requesterOptions, (error, info) => {
+  if (error) {
+    return res.status(500).json({ message: 'Error sending email', error });
+  }
+  res.status(200).json({ message: 'Appointment requested successfully' });
+});
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
