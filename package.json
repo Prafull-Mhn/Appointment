@@ -1,0 +1,32 @@
+{
+  "name": "email-appointment",
+  "version": "1.0.0",
+  "description": "Testing for sending an email notification",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prafull-Mhn/Appointment.git"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.11",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "appointment"
+  ],
+  "author": "Prafull Mohan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Prafull-Mhn/Appointment/issues"
+  },
+  "homepage": "https://github.com/Prafull-Mhn/Appointment#readme"
+}
