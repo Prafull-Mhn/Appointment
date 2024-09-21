@@ -19,7 +19,7 @@ let transporter = nodemailer.createTransport({
 });
 
 app.post('/send-email', (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone,city, date, time, message } = req.body;
 
   const mailOptions = {
     from: 'ghc.notify@gmail.com',
@@ -29,6 +29,9 @@ app.post('/send-email', (req, res) => {
     Name: ${name}
     Email: ${email}
     Phone: ${phone}
+    Location: ${city}
+    Date: ${date}
+    Time: ${time}
     Message: ${message}`
   };
 
@@ -41,6 +44,9 @@ app.post('/send-email', (req, res) => {
     Name: ${name}
     Email: ${email}
     Phone: ${phone}
+    Location: ${city}
+    Date: ${date}
+    Time: ${time}
     Message: ${message}`
   };
 
